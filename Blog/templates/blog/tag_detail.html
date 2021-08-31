@@ -1,0 +1,13 @@
+{% extends 'blog/base_blog.html' %}
+{% block title %}
+  tag detail
+{% endblock %}
+
+{% block body %}
+<p class="fs-3 mt-5 mx-5">Tag: {{tag.title}}</p>
+<div class="posts-container mt-5 mx-5">
+  {% for post in tag.posts.all %}
+    {% include 'blog/includes/post_include.html' %}
+  {% endfor %}
+</div>
+{% endblock %}

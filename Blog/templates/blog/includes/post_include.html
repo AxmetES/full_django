@@ -1,0 +1,21 @@
+<div class="card mb-4" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">{{post.title}}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">{{post.author.name}}</h6>
+    <h6 class="card-subtitle mb-2 text-muted">{{post.date_pub}}</h6>
+    <p class="card-text">{{post.body|truncatewords:15}}</p>
+    <a href="{{ post.get_absolute_url }}" class="card-link">read</a>
+     <div class="card-footer">
+        <small class="text-muted">
+           tags:
+           {% for tag in post.tags.all %}
+        <small class="text-muted">
+          #<a href="{{ tag.get_absolute_url }}">{{tag.title}}</a>
+        </small>
+        {% endfor %}
+      </small>
+    </div>
+<!--            <a href="#" class="card-link">edit</a>-->
+<!--            <a href="#" class="card-link">delete</a>-->
+  </div>
+</div>

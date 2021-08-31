@@ -1,0 +1,22 @@
+{% extends 'blog/base_blog.html' %}
+
+{% block title %}
+  tag create - {{ block.super }}
+{% endblock %}
+
+
+{% block body %}
+<h5 class=" mx-5 mt-5">Create Tag</h5>
+<form action="{% url 'tag_create_url' %}" method="post">
+    {% csrf_token %}
+    {% for field in form %}
+      <div class="form-group mt-5 mx-5">
+          {{field.label}}
+          {{field}}
+      </div>
+    {% endfor %}
+    <div class="button mt-3 mx-5">
+      <button type="submit" class="btn btn-primary">create tag</button>
+    </div>
+</form>
+{% endblock %}

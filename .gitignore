@@ -1,0 +1,6 @@
+/Blog/__pycache__
+/Blog/migrations/__pycache__
+/Posts/__pycache__
+.idea
+/db.sqlite3
+/volume
