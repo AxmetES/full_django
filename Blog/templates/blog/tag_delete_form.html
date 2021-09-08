@@ -1,0 +1,15 @@
+{% extends 'blog/base_blog.html' %}
+{% block title %}
+tag delete
+{% endblock %}
+
+{% block body %}
+<form action="{% url 'tag_delete_url' slug=tag.slug %}" method="post">
+    {% csrf_token %}
+    <h5>Delete tag : {{tag.title|title}}</h5>
+    <div class="button mt-3 mx-5">
+        <a class="btn btn-info mt-2" href="{% url 'tag_detail_url' slug=tag.slug %}" role="button">back</a>
+        <button type="submit" name="button" class="btn btn-danger">delete</button>
+    </div>
+</form>
+{% endblock %}
